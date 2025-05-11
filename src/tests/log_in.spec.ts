@@ -79,7 +79,7 @@ describe('USER SIGNUP AND LOGIN', () => {
               console.log("cookie", loginRes.headers["set-cookie"][0]);
               cookie = loginRes.headers["set-cookie"][0].split(";")[0];
               return deleteFunction2(cookie)
-              .end((err,deleteRes)=>{
+              .end((err,loginAfterDelete)=>{
                 if(err) return done(err)
 
                   expect(loginAfterDelete.statusCode).toBe(401);
